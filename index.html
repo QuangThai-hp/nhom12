@@ -144,7 +144,7 @@
 <script>
     // --- GIỮ NGUYÊN CODE JAVASCRIPT CŨ CỦA BẠN ---
     const broker = "broker.hivemq.com";
-    const port = 8000;
+    const port = 8884;
     const topicControl = "nhom12/control";
     const topicSensor = "nhom12/sensor";
     
@@ -175,7 +175,7 @@
 
     client.onConnectionLost = onConnectionLost;
     client.onMessageArrived = onMessageArrived;
-    client.connect({onSuccess: onConnect});
+    client.connect({onSuccess: onConnect, useSSL: true});
 
     function sendCommand(cmd) { sendMessage(cmd); }
     function sendText() {
@@ -198,4 +198,5 @@
 </script>
 
 </body>
+
 </html>
